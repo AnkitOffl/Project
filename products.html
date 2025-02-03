@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="productstyle.css">
+</head>
+<body onload="showPage()">
+
+    <!-- Loader Animation -->
+    <div id="loader"></div>
+
+    <!-- Main Content (Hidden Initially) -->
+    <div id="content" class="hidden">
+        <header>
+            <div class="logo">
+                <h1>Star Crush Products</h1>
+            </div>
+           <nav>
+    <ul>
+        <li><a href="home.html">Home</a></li> <!-- Make sure this matches your actual home page -->
+        <li><a href="index.html">Login</a></li>
+        <li><a href="registration.html">Sign Up</a></li>
+        <li><button id="logoutBtn" class="nav-btn">Logout</button></li>
+    </ul>
+</nav>
+        </header>
+
+        <main>
+            <h2>Our Products</h2>
+            <div class="product-container">
+                <div class="product">
+                    <img src="jordan.jpg" alt="Nike Air Jordan">
+                    <h3>Nike Air Jordan</h3>
+                    <p>$1200</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="ferrari.jpg" alt="Ferrari F8 Tributo">
+                    <h3>Ferrari F8 Tributo</h3>
+                    <p>$480,000</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="iphone.jpg" alt="iPhone 16 Pro Max">
+                    <h3>iPhone 16 Pro Max</h3>
+                    <p>$2000</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+             <div class="product">
+                    <img src="rolex.jpg" alt="Rolex Daytona">
+                    <h3>Rolex Daytona Rose gold Black 40mm</h3>
+                    <p>$300000</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+             <div class="product">
+                    <img src="omega.jpg" alt="OMEGA De Ville Tourbillon ">
+                    <h3>OMEGA De Ville Tourbillon </h3>
+                    <p>$165000.00</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+             <div class="product">
+                    <img src="defender.jpg" alt="Land Rover Defender">
+                    <h3>Land Rover Defender</h3>
+                    <p>$114798.37</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+              <div class="product">
+                    <img src="armani.webp" alt="GIORGIO ARMANI">
+                    <h3>GIORGIO ARMANI Main Line Wool Regular Fit 2-Piece Sets For Men </h3>
+                    <p>$22715.25</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+
+
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; Star Crush Productions | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+       
+        function showPage() {
+            setTimeout(function () {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            }, 2000);
+        }
+
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            localStorage.removeItem("username");
+            localStorage.removeItem("email");
+            localStorage.removeItem("password");
+            alert("You have been logged out!");
+            window.location.href = "index.html";
+        });
+    </script>
+
+</body>
+</html>

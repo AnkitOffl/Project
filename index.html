@@ -1,0 +1,47 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <img src="loginimage.JPG" alt="Avatar" class="avatar">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <input type="text" id="usernameInput" name="username" placeholder="Username or Email" required><br>
+                <input type="password" id="passwordInput" name="password" placeholder="Password" required><br>
+                <button type="submit" class="btn">Log In</button>
+            </form>
+            <p>Don't have an account? <a href="registration.html">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            let enteredUsername = document.getElementById("usernameInput").value;
+            let enteredPassword = document.getElementById("passwordInput").value;
+
+
+            let storedUsername = localStorage.getItem("username");
+            let storedEmail = localStorage.getItem("email");
+            let storedPassword = localStorage.getItem("password");
+
+            
+            if ((enteredUsername === storedUsername || enteredUsername === storedEmail) && enteredPassword === storedPassword) {
+                alert("You are valid");
+                window.location.href = "home.html";
+            } else {
+                alert("Intruder");
+            }
+        });
+    </script>
+</body>
+</html>
+
